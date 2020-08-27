@@ -1,25 +1,43 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {
+  ThemeProvider,
+  jssPreset,
+  StylesProvider,
+} from '@material-ui/core/styles';
+import { create } from 'jss';
+import rtl from 'jss-rtl';
+import theme from './theme/theme';
+import { BrowserRouter } from 'react-router-dom';
+import { CssBaseline } from '@material-ui/core';
+// import IndexScreen from './screens/index';
+import Home from './screens/homeScreen';
+// import About from './screens/aboutScreen'
+// import Portfolios from  "./screens/portfolioScreen"
+import IndexScreen from './screens/IndexScreen';
+// import Resume from './screens/resume'
+
+import { getDirection } from './localization/index';
+const jss = create({ plugins: [...jssPreset().plugins, rtl()] });
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  return getDirection() === 'ltr' ? (
+    <ThemeProvider theme={theme}>
+      <BrowserRouter>
+        <StylesProvider>
+          <CssBaseline />
+          <IndexScreen />
+        </StylesProvider>
+      </BrowserRouter>
+    </ThemeProvider>
+  ) : (
+    <ThemeProvider theme={theme}>
+      <BrowserRouter>
+        <StylesProvider jss={jss}>
+          <CssBaseline />
+          <IndexScreen />
+        </StylesProvider>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 

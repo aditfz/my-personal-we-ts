@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Button from '@material-ui/core/Button';
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
@@ -298,6 +298,7 @@ function ResponsiveDrawer() {
     </>
   );
   const container = window.document.body;
+
   const getPage = () => (
     <Switch>
       <Route path='/about'>

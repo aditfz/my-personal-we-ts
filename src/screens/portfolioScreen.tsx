@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function PortfoliosScreen() {
   const portfolios = [
-    { id: 1, title: 'Personal-Web', desc: '', color: '#f00' },
+    { id: 1, title: 'Personal-Web', desc: 'web developer', color: '#f00' },
     { id: 2, title: 'react ', desc: 'web developer', color: '#0f0' },
     { id: 3, title: 'react', desc: 'web developer', color: '#00f' },
     { id: 4, title: 'react js', desc: 'web developer', color: '#ff0' },

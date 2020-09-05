@@ -88,14 +88,14 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
   },
   activeListItem: {
-    borderRight: '1px solid red',
+    backgroundColor:'#037fff'
   },
 }));
 
 function ResponsiveDrawer() {
   const translate = getTranslate();
   const classes = useStyles();
-  // const [page, setPage] = useState(4);
+  const [page, setPage] = React.useState(0);
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
@@ -130,17 +130,19 @@ function ResponsiveDrawer() {
         <ListItem
           onClick={() => {
             setMobileOpen(false);
+            setPage(0);
+
           }}
           component={NavLink}
           to='/'
           exact
           activeClassName={classes.activeListItem}
-          // className={page === 0 ? undefined : 'listItem'}
+          className={page === 0 ? undefined : 'listItem'}
           button
           // component={NavLink}
           // to={}
           style={{
-            // backgroundColor: page === 0 ? '#037fff' : 'transparent',
+             backgroundColor: page === 0 ? '#037fff' : 'transparent',
             paddingLeft: 0,
             paddingRight: 0,
           }}
@@ -149,7 +151,7 @@ function ResponsiveDrawer() {
             {
               <Typography
                 className='listItemText'
-                // style={{ color: page === 0 ? '#fff' : '#a4acc4' }}
+                style={{ color: page === 0 ? '#fff' : '#a4acc4' }}
                 variant='body2'
               >
                 {translate.home}
@@ -160,16 +162,16 @@ function ResponsiveDrawer() {
         </ListItem>
         <ListItem
           onClick={() => {
-            // setPage(1);
+             setPage(1);
             setMobileOpen(false);
           }}
           component={NavLink}
           to='/about'
           activeClassName={classes.activeListItem}
-          // className={page === 1 ? undefined : 'listItem'}
+          className={page === 1 ? undefined : 'listItem'}
           button
           style={{
-            // backgroundColor: page === 1 ? '#037fff' : 'transparent',
+           backgroundColor: page === 1 ? '#037fff' : 'transparent',
             paddingLeft: 0,
             paddingRight: 0,
           }}
@@ -178,7 +180,7 @@ function ResponsiveDrawer() {
             {
               <Typography
                 className='listItemText'
-                // style={{ color: page === 1 ? '#fff' : '#a4acc4' }}
+           style={{ color: page === 1 ? '#fff' : '#a4acc4' }}
                 variant='body2'
               >
                 {translate.about}
@@ -190,15 +192,15 @@ function ResponsiveDrawer() {
 
         <ListItem
           onClick={() => {
-            // setPage(2);
+             setPage(2);
             setMobileOpen(false);
           }}
           component={NavLink}
           to='/resume'
           activeClassName={classes.activeListItem}
-          // className={page === 2 ? undefined : 'listItem'}
+           className={page === 2 ? undefined : 'listItem'}
           style={{
-            // backgroundColor: page === 2 ? '#037fff' : 'transparent',
+           backgroundColor: page === 2 ? '#037fff' : 'transparent',
             paddingLeft: 0,
             paddingRight: 0,
           }}
@@ -208,7 +210,7 @@ function ResponsiveDrawer() {
             {
               <Typography
                 className='listItemText'
-                // style={{ color: page === 2 ? '#fff' : '#a4acc4' }}
+                style={{ color: page === 2 ? '#fff' : '#a4acc4' }}
                 variant='body2'
               >
                 {translate.resume}
@@ -220,16 +222,16 @@ function ResponsiveDrawer() {
 
         <ListItem
           onClick={() => {
-            // setPage(3);
+             setPage(3);
             setMobileOpen(false);
           }}
           component={NavLink}
           to='/portfolio'
           activeClassName={classes.activeListItem}
-          // className={page === 3 ? undefined : 'listItem'}
+           className={page === 3 ? undefined : 'listItem'}
           style={{
-            // backgroundColor: page === 3 ? '#037fff' : 'transparent',
-            paddingLeft: 0,
+           backgroundColor: page === 3 ? '#037fff' : 'transparent',
+           paddingLeft: 0,
             paddingRight: 0,
           }}
           button
@@ -238,7 +240,7 @@ function ResponsiveDrawer() {
             {
               <Typography
                 className='listItemText'
-                // style={{ color: page === 3 ? '#fff' : '#a4acc4' }}
+           style={{ color: page === 3 ? '#fff' : '#a4acc4' }}
                 variant='body2'
               >
                 {translate.portfolios}
@@ -250,15 +252,15 @@ function ResponsiveDrawer() {
 
         <ListItem
           onClick={() => {
-            // setPage(4);
+             setPage(4);
             setMobileOpen(false);
           }}
           component={NavLink}
           to='/contact-us'
           activeClassName={classes.activeListItem}
-          // className={page === 4 ? undefined : 'listItem'}
+           className={page === 4 ? undefined : 'listItem'}
           style={{
-            // backgroundColor: page === 4 ? '#037fff' : 'transparent',
+           backgroundColor: page === 4 ? '#037fff' : 'transparent',
             paddingLeft: 0,
             paddingRight: 0,
 
@@ -270,7 +272,7 @@ function ResponsiveDrawer() {
             {
               <Typography
                 className='listItemText'
-                // style={{ color: page === 4 ? '#fff' : '#a4acc4' }}
+          style={{ color: page === 4 ? '#fff' : '#a4acc4' }}
                 variant='body2'
               >
                 {translate.contact}
